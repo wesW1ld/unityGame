@@ -62,19 +62,21 @@ public class Movement : MonoBehaviour
                 //isJumping = true;
             }
 
+            //TESTING
             if(Input.GetKeyDown(KeyCode.Q))
             {
-                rb.velocity = new Vector2(rb.velocity.x, 0f);
-
-                if(rb.gravityScale == -1f)
-                {
-                    rb.gravityScale = 1f;
-                }
-                else
-                {
-                    rb.gravityScale = -1f;
-                }
+                GameManager.Instance.paused = true;
+                rb.velocity = new Vector2(0f, 0f);
             }
+        }
+        else
+        {
+            //TESTING
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                GameManager.Instance.paused = false;
+            }
+
         }
     }
 
