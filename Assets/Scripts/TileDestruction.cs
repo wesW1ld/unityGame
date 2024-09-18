@@ -24,7 +24,7 @@ public class TileDestruction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (other.transform.position.y < transform.position.y)
+            if (other.transform.position.y < transform.position.y || gameObject.CompareTag("death"))
             {
                 Debug.Log("Contact Point: " + other.contacts[0].point);
 

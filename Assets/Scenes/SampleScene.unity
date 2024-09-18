@@ -2777,7 +2777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  myPrefab: {fileID: 101184153059286905, guid: 146614ae3d34bf04eb5c43dde289665a, type: 3}
+  Tilemap: {fileID: 1190056707}
+  tile: {fileID: 11400000, guid: c2ee25acfdb006e449c2968e9ebc4217, type: 2}
 --- !u!50 &519420034
 Rigidbody2D:
   serializedVersion: 4
@@ -3519,6 +3520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paused: 0
+  points: 0
 --- !u!1 &733158636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4595,9 +4597,11 @@ GameObject:
   - component: {fileID: 1190056705}
   - component: {fileID: 1190056707}
   - component: {fileID: 1190056706}
+  - component: {fileID: 1190056709}
+  - component: {fileID: 1190056708}
   m_Layer: 0
   m_Name: Tilemap_Spikes
-  m_TagString: Untagged
+  m_TagString: death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4808,6 +4812,54 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1190056708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190056704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe0a851d62af4d42a72b83b39b2fb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!19719996 &1190056709
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190056704}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1207113914
 GameObject:
   m_ObjectHideFlags: 0
@@ -7159,8 +7211,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.72, y: 4.2}
-  m_SizeDelta: {x: 5.7492, y: 1.1522}
+  m_AnchoredPosition: {x: 4.54, y: 2.7364}
+  m_SizeDelta: {x: 5.7492, y: 4.1794}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948810126
 MonoBehaviour:
@@ -7216,7 +7268,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

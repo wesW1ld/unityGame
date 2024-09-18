@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class camMove : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class camMove : MonoBehaviour
     public float speed;
 
     private Rigidbody2D rb;
-    public GameObject myPrefab;
+    //public GameObject myPrefab;
+    public Tilemap Tilemap;
+    private Vector3Int tilePos;
+    public TileBase tile;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +33,26 @@ public class camMove : MonoBehaviour
                 rb.velocity = new Vector2(0f, 0f);
                 transform.position = new Vector3(pausePos.x, pausePos.y, transform.position.z);
             }
-
-            xMove = Input.GetAxis("Horizontal");
-            yMove = Input.GetAxis("Vertical");
-
-            rb.velocity = new Vector2(speed * xMove, speed * yMove);
-
-            if(Input.GetKeyDown(KeyCode.T))
+            else
             {
-                GameObject instance = Instantiate(myPrefab, transform.position, Quaternion.identity);
-                instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y, 1);
+                xMove = Input.GetAxis("Horizontal");
+                yMove = Input.GetAxis("Vertical");
+
+                rb.velocity = new Vector2(speed * xMove, speed * yMove);
+
+                if(Input.GetKeyDown(KeyCode.T))
+                {
+                    //GameObject instance = Instantiate(myPrefab, transform.position, Quaternion.identity);
+                    //instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y, 1);
+
+                    tilePos = Tilemap.WorldToCell(transform.position);
+                    if(Tilemap.GetTile(tilePos) == null)
+                    {
+                        Tilemap.SetTile(tilePos, tile);
+                        GameManager.Instance.points++;
+                    }
+
+                }
             }
         }
         else

@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     public static bool respawn = false;
     public int deathCounter = 0;
     private TextMeshPro textMeshPro;
+    private int points = 0;
 
     public float groundCheckDistance = 0.3f;
     public LayerMask groundLayer;
@@ -28,7 +29,7 @@ public class Movement : MonoBehaviour
         // Check if the TextMesh component was found
         if (textMeshPro != null)
         {
-            textMeshPro.text = "Deaths: " + deathCounter;
+            textMeshPro.text = "Deaths: " + deathCounter + "\nPoints: " + GameManager.Instance.points;
         }
         else
         {
@@ -41,20 +42,36 @@ public class Movement : MonoBehaviour
     {
         respawn = false;
 
+        if(this.points != GameManager.Instance.points)
+        {
+            this.points = GameManager.Instance.points;
+            textMeshPro.text = "Deaths: " + deathCounter + "\nPoints: " + GameManager.Instance.points;
+        }
+
         if(!GameManager.Instance.paused)
         {
             Move = Input.GetAxis("Horizontal");
 
             rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
-            Vector2 rayStart = new Vector2(transform.position.x, transform.position.y - 0.5f);
+            Vector2 rayStart;
+
+            //if bigger, different raycast
+            if(gameObject.transform.localScale.Equals(new Vector3(1, 2, 1)))
+            {
+                rayStart = new Vector2(transform.position.x, transform.position.y - 1f);
+            }
+            else
+            {
+                rayStart = new Vector2(transform.position.x, transform.position.y - 0.5f);
+            }
 
             Debug.DrawRay(rayStart, Vector2.down * groundCheckDistance, Color.red);
             // Debug.Log("Player Position: " + transform.position);
             // Debug.Log("Ground Check Distance: " + groundCheckDistance);
 
             isGrounded = Physics2D.Raycast(rayStart, Vector2.down, groundCheckDistance, groundLayer);
-            Debug.Log("Is Jumping: " + isGrounded);
+            //Debug.Log("Is Jumping: " + isGrounded);
 
             if(Input.GetButtonDown("Jump") && isGrounded)
             {
@@ -104,7 +121,7 @@ public class Movement : MonoBehaviour
                     respawn = true;
                     rb.position = new Vector2(-8.62f, 0.88f);
                     deathCounter++;
-                    textMeshPro.text = "Deaths: " + deathCounter;
+                    textMeshPro.text = "Deaths: " + deathCounter + "\nPoints: " + GameManager.Instance.points;
                 }
             }
 

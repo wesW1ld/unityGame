@@ -1,0 +1,8 @@
+9/18
+    fixes:
+        fixed jump not working when character is bigger
+        fixed camera being stuck moving after going back to character while holding a movement key
+
+    changes:
+        changed placement to place spikes
+        added score feature
