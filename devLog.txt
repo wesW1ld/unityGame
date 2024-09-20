@@ -6,3 +6,22 @@
     changes:
         changed placement to place spikes
         added score feature
+
+9/20
+    changes:
+        added main menu
+        added scene management
+        working on level building
+
+
+bugs:
+    collision
+        -hitting with left side of character with delete right box, if no box there left box isn't deleted (fix collision)
+        -also not working from side
+
+TODO:
+    spike placement rules
+    3(?) life max per level, maybe change death counter to health counter
+    change placement mode to be when you enter level rather than pressing Q
+    way to delete player placed spikes
+    scoreboard
