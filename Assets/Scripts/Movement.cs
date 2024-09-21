@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    //once per frame
     void Update()
     {
         respawn = false;
@@ -71,7 +71,7 @@ public class Movement : MonoBehaviour
             // Debug.Log("Ground Check Distance: " + groundCheckDistance);
 
             isGrounded = Physics2D.Raycast(rayStart, Vector2.down, groundCheckDistance, groundLayer);
-            //Debug.Log("Is Jumping: " + isGrounded);
+            //Debug.Log("Is Grounded: " + isGrounded);
 
             if(Input.GetButtonDown("Jump") && isGrounded)
             {

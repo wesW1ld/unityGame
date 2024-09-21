@@ -7,21 +7,32 @@
         changed placement to place spikes
         added score feature
 
-9/20
+9/20 (but like 9/19 cause after midnight)
     changes:
         added main menu
         added scene management
         working on level building
 
+9/20 (day)
+    spent hours trying to fix collision
+    gonna try objects for spikes instead of tilemap
+    IT WORKS
+
+    fixes:
+        collision
 
 bugs:
-    collision
-        -hitting with left side of character with delete right box, if no box there left box isn't deleted (fix collision)
-        -also not working from side
+    cant jump unless middle is on block (raycast)
+
+    if player falls during pause, cam it in wrong place b/c it doesn't fall
 
 TODO:
     spike placement rules
     3(?) life max per level, maybe change death counter to health counter
     change placement mode to be when you enter level rather than pressing Q
     way to delete player placed spikes
+    have score and health move with cam in pause mode
+    visual to see where spike is being placed
+    spike hitbox to spike, remove background too
+    make it so spikes can't be placed on pre-placed block
     scoreboard

@@ -188,6 +188,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2066303839077438747, guid: 5413639627d18974dbb701495c24791d, type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 2282998482010376842}
+    - target: {fileID: 2066303839077438747, guid: 5413639627d18974dbb701495c24791d, type: 3}
       propertyPath: Tilemap
       value: 
       objectReference: {fileID: 1564731403863024919}
@@ -487,7 +491,27 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
@@ -495,28 +519,46 @@ Tilemap:
     m_Data:
       e00: 0
       e01: 0
-      e02: 1.7618306e-19
-      e03: 1.7618306e-19
+      e02: -1.7618306e-19
+      e03: -1.7618306e-19
+      e10: 8.2e-43
+      e11: 0
+      e12: 8.16e-43
+      e13: 8.16e-43
+      e20: -428.5249
+      e21: 0.000000029902083
+      e22: 9.595431e-29
+      e23: -3.757677e+19
+      e30: 4.5905e-41
+      e31: 8.18e-43
+      e32: 8.17e-43
+      e33: 8.18e-43
+  - m_RefCount: 0
+    m_Data:
+      e00: 0
+      e01: 0
+      e02: -1.7618306e-19
+      e03: -1.7618306e-19
       e10: 0
       e11: 0
-      e12: 6.94e-43
-      e13: 6.94e-43
-      e20: 4.8769044e+16
-      e21: -2.8882718e-10
-      e22: -2.956635e-19
-      e23: 1.6182983e+29
+      e12: 8.16e-43
+      e13: 8.16e-43
+      e20: -428.5249
+      e21: 0.000000029902083
+      e22: 5.9726795e-29
+      e23: -3.757677e+19
       e30: 4.5905e-41
-      e31: 6.96e-43
-      e32: 6.94e-43
-      e33: 6.96e-43
+      e31: 8.18e-43
+      e32: 8.17e-43
+      e33: 8.18e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
+    m_Data: {r: 3.652e-41, g: 3.652e-41, b: 3.652e-41, a: 3.652e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: -2, z: 0}
-  m_Size: {x: 5, y: 2, z: 1}
+  m_Origin: {x: -1, y: -2, z: 0}
+  m_Size: {x: 6, y: 6, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:

@@ -16,6 +16,10 @@ public class camMove : MonoBehaviour
     public Tilemap Tilemap;
     private Vector3Int tilePos;
     public TileBase tile;
+    private Vector3Int spikePos;
+
+    public GameObject spikePrefab;
+    public Grid grid;
 
     // Start is called before the first frame update
     void Start()
@@ -45,13 +49,18 @@ public class camMove : MonoBehaviour
                     //GameObject instance = Instantiate(myPrefab, transform.position, Quaternion.identity);
                     //instance.transform.position = new Vector3(instance.transform.position.x, instance.transform.position.y, 1);
 
-                    tilePos = Tilemap.WorldToCell(transform.position);
-                    if(Tilemap.GetTile(tilePos) == null)
-                    {
-                        Tilemap.SetTile(tilePos, tile);
-                        GameManager.Instance.points++;
-                    }
+                    // tilePos = Tilemap.WorldToCell(transform.position);
+                    // if(Tilemap.GetTile(tilePos) == null)
+                    // {
+                    //     Tilemap.SetTile(tilePos, tile);
+                    //     GameManager.Instance.points++;
+                    //     Debug.Log("Tile Position: " + tilePos);
+                    // }
 
+                    spikePos = grid.WorldToCell(transform.position);
+                    Vector3 pos = grid.GetCellCenterWorld(spikePos);
+                    pos.y -= 0.2f;
+                    Instantiate(spikePrefab, pos, Quaternion.identity);
                 }
             }
         }
