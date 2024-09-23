@@ -362,10 +362,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  Tilemap: {fileID: 0}
-  tile: {fileID: 11400000, guid: 45173b1195589a74485409356bd17f97, type: 2}
   spikePrefab: {fileID: 2733775606592506661, guid: 8571619c9544dd64fa7a63170c25219c, type: 3}
   grid: {fileID: 0}
+  VspikePrefab: {fileID: 2733775606592506661, guid: 4ac3d284a9315984185b1fa36e80779b, type: 3}
 --- !u!50 &4345652028014945801
 Rigidbody2D:
   serializedVersion: 4

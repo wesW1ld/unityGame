@@ -21,18 +21,26 @@
     fixes:
         collision
 
+9/23
+    changes:
+        spike hitbox and sprite
+        spike placement rules
+
 bugs:
     cant jump unless middle is on block (raycast)
 
     if player falls during pause, cam it in wrong place b/c it doesn't fall
 
 TODO:
-    spike placement rules
     3(?) life max per level, maybe change death counter to health counter
     change placement mode to be when you enter level rather than pressing Q
     way to delete player placed spikes
     have score and health move with cam in pause mode
-    visual to see where spike is being placed
-    spike hitbox to spike, remove background too
-    make it so spikes can't be placed on pre-placed block
+    !!visual to see where spike is being placed: try opacity of sprite
+        have a sprite (never placed) following the camera DONE(broke it)
+            worked with rigid body, but that probably wont do grid stuff
+            !!!!trying transform.postion, but it can't be seen
+        change opacity to be lighter, even lighter if you can't place one there
+        to help with lag, maybe only check placement rules if moving
     scoreboard
+    display message instead of debug log for incorrect palcement
