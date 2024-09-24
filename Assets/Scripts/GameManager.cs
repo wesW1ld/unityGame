@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public bool paused = false;
     public int points = 0;
+    public int lives = 3;
 
     private void Awake()
     {

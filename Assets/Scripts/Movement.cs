@@ -13,9 +13,9 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     public bool isGrounded;
     public static bool respawn = false;
-    public int deathCounter = 0;
     private TextMeshPro textMeshPro;
     private int points = 0;
+    private Vector2 respawnPos;
 
     public float groundCheckDistance = 0.3f;
     public LayerMask groundLayer;
@@ -29,12 +29,16 @@ public class Movement : MonoBehaviour
         // Check if the TextMesh component was found
         if (textMeshPro != null)
         {
-            textMeshPro.text = "Deaths: " + deathCounter + "\nPoints: " + GameManager.Instance.points;
+            textMeshPro.text = "Health: " + GameManager.Instance.lives + "\nPoints: " + GameManager.Instance.points;
         }
         else
         {
             Debug.LogError("TextMesh component not found!");
         }
+
+        respawnPos = transform.position;
+
+        GameManager.Instance.paused = true;
     }
 
     //once per frame
@@ -45,7 +49,7 @@ public class Movement : MonoBehaviour
         if(this.points != GameManager.Instance.points)
         {
             this.points = GameManager.Instance.points;
-            textMeshPro.text = "Deaths: " + deathCounter + "\nPoints: " + GameManager.Instance.points;
+            textMeshPro.text = "Health: " + GameManager.Instance.lives + "\nPoints: " + GameManager.Instance.points;
         }
 
         if(!GameManager.Instance.paused)
@@ -101,15 +105,6 @@ public class Movement : MonoBehaviour
     {
         if(!GameManager.Instance.paused)
         {
-            // if(other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("WallFloor"))
-            // {
-            //     Debug.Log("other: " + other.transform.position.y + " player: " + transform.position.y);
-            //     if(other.transform.position.y < transform.position.y)
-            //     {
-            //         isJumping = false;
-            //     }
-            // }
-
             if(other.gameObject.CompareTag("death"))
             {
                 if(gameObject.transform.localScale.Equals(new Vector3(1, 2, 1)))
@@ -119,9 +114,9 @@ public class Movement : MonoBehaviour
                 else
                 {
                     respawn = true;
-                    rb.position = new Vector2(-8.62f, 0.88f);
-                    deathCounter++;
-                    textMeshPro.text = "Deaths: " + deathCounter + "\nPoints: " + GameManager.Instance.points;
+                    rb.position = respawnPos;
+                    GameManager.Instance.lives--;
+                    textMeshPro.text = "Health: " + GameManager.Instance.lives + "\nPoints: " + GameManager.Instance.points;
                 }
             }
 

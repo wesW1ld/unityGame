@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 288813767267497710}
   - component: {fileID: 990518028393955630}
   - component: {fileID: 1011337745007027899}
+  - component: {fileID: 3422149904299175897}
   m_Layer: 0
   m_Name: invisWall
   m_TagString: Wall
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1169032558332263451}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.728401, y: -1.2444979, z: -0.026708446}
-  m_LocalScale: {x: 1, y: 13.0518, z: 1}
+  m_LocalPosition: {x: -13.8939, y: -3.038, z: -0.026708446}
+  m_LocalScale: {x: 8.6689, y: 16.638433, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3422149904299175897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169032558332263451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e66a0d9d6bab07419016d92883e142f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -26,21 +26,28 @@
         spike hitbox and sprite
         spike placement rules
 
+9/24
+    changes:
+        visual to see spike before it is placed, can also tell if placeable from opacity
+        start in placement mode
+        made a second level
+        make level transitions
+
 bugs:
     cant jump unless middle is on block (raycast)
-
+    sticks to walls if moving in that direction
     if player falls during pause, cam it in wrong place b/c it doesn't fall
 
 TODO:
-    3(?) life max per level, maybe change death counter to health counter
-    change placement mode to be when you enter level rather than pressing Q
     way to delete player placed spikes
     have score and health move with cam in pause mode
-    !!visual to see where spike is being placed: try opacity of sprite
-        have a sprite (never placed) following the camera DONE(broke it)
-            worked with rigid body, but that probably wont do grid stuff
-            !!!!trying transform.postion, but it can't be seen
-        change opacity to be lighter, even lighter if you can't place one there
-        to help with lag, maybe only check placement rules if moving
     scoreboard
-    display message instead of debug log for incorrect palcement
+    display message instead of debug log for incorrect placement
+    death handling
+    more lvls
+    tutorial (yipee)
+    make score be per level
+    can't place spikes on invisable end wall
+important:
+    get working game demo
+    a few levels, deaths, final score with each level's score
